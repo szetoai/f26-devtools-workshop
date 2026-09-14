@@ -25,5 +25,10 @@ app.post('/', (req, res) => {
 
 // ========= Write your own post request here to do whatever you want ========
 app.post('/hello-world', (resq, res) => {
+  if (!req.body || !req.body.name) {
+    res.status(400).send("Missing a name in the request body!");
+    return;
+  }
+  users.push(req.body.name);
   res.send("Hello World!");
 })
