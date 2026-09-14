@@ -24,3 +24,12 @@ app.post('/', (req, res) => {
 });
 
 // ========= Write your own post request here to do whatever you want ========
+app.post('/jude branch', (req,res) => {
+  if (!req.body || !req.body.name) {
+    res.status(400).send("Missing a  in the request body!");
+    return;
+  }
+
+  users.filter(name => name != req.body.name);
+  res.send('User with name ${req.body.name} has been removed');
+});
