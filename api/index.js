@@ -24,3 +24,6 @@ app.post('/', (req, res) => {
 });
 
 // ========= Write your own post request here to do whatever you want ========
+app.post('/list-users', (req, res) => {
+  res.send(`Users: ${users}`);
+});
